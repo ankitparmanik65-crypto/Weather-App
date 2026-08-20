@@ -4,32 +4,53 @@ A clean, responsive weather forecast web app built with vanilla HTML, CSS, and J
 
 ## Features
 
-- 🔍 City search — look up weather for any city worldwide
-- 📍 Auto-locate — uses your device's GPS to show local weather on load
-- 🌡️ Current conditions — temperature, "feels like", condition, and icon
-- 🌅 Sunrise / sunset arc — visual sun position tracker
-- 💧 Live stats — humidity, wind speed, pressure, and UV index
-- 🕐 24-hour forecast — scrollable hourly temperature cards
-- 📅 7-day forecast — daily highs/lows, condition, and rain chance
-- 📱 Fully responsive — optimized layouts for desktop, tablet, and mobile
-- 🕒 Consistent 12-hour time format (AM/PM) across all devices, regardless of locale
+- 🔍 City search — Search for weather information for any city worldwide.
+- 📍 Auto-location — Uses your device's GPS to detect your current location and display local weather.
+- 🌡️ Current conditions — Shows current temperature, feels-like temperature, weather condition, and weather icon.
+- 🔄 Celsius / Fahrenheit toggle — Switch between °C and °F instantly using JavaScript conversion. The selected unit is saved in localStorage.
+- 💾 Last searched city — The most recently searched city is stored in localStorage and automatically loaded when the app is opened again.
+- 🌅 Sunrise / sunset arc — Visual sunrise and sunset tracker showing the approximate position of the sun.
+- 💧 Live weather stats — Displays humidity, wind speed, atmospheric pressure, and UV index.
+- 🕐 24-hour forecast — Scrollable hourly forecast showing weather icons and temperatures.
+- 📅 7-day forecast — Daily high/low temperatures, weather conditions, and precipitation probability.
+- 🔎 Daily forecast details — Click any day in the 7-day forecast to view detailed weather information including high/low temperature, rain chance, UV index, sunrise, and sunset.
+- 🌧️ Weather-based animations — Background animations change according to weather conditions, including animated rain drops and moving clouds.
+- 🌌 Dark navy interface — Clean dark navy gradient background with glassmorphism-style weather cards.
+- 📱 Fully responsive — Optimized layouts for desktop, tablet, and mobile devices.
+- 🕒 Consistent 12-hour time format — Time is displayed using AM/PM consistently across supported devices.
+- ⚡ No API key required — Uses the free Open-Meteo API for weather and geocoding data.
 
 ## Tech Stack
 
 - HTML5 — structure
 - CSS3 — styling, responsive layout, animations
-- Vanilla JavaScript — app logic, DOM rendering, geolocation
+- JavaScript — app logic, DOM rendering, geolocation
 - [Open-Meteo API](https://open-meteo.com/) — free weather & geocoding data (no API key required)
 
 
 ## How It Works
 
-1. On load, the app requests the browser's geolocation permission and fetches weather for the current position.
-2. If location access is denied, users can search for a city using the search bar.
-3. City names are resolved to coordinates via Open-Meteo's **Geocoding API**.
-4. Coordinates are then used to fetch current, hourly, and daily weather data from Open-Meteo's **Forecast API**.
-5. Data is rendered dynamically into the hero card, stats grid, hourly scroll strip, and 7-day list.
-6. Clicking a day in the 7-day forecast shows a detailed breakdown (high/low, rain chance, UV, sunrise/sunset) via an alert popup.
+1. On first load, the app checks whether a previously searched city is stored in localStorage.
+
+2. If a saved city exists, that city is automatically loaded.
+
+3. If no saved city exists, the app requests browser geolocation permission and attempts to fetch weather for the user's current position.
+
+4. If location access is denied or unavailable, users can search for a city using the search bar.
+
+5. The city name is converted into latitude and longitude using Open-Meteo's Geocoding API.
+
+6. The coordinates are then used to fetch current, hourly, and daily weather data from Open-Meteo's Forecast API.
+
+7. Weather data is dynamically rendered into the current weather card, stats grid, hourly forecast, sunrise/sunset section, and 7-day forecast.
+
+8. The selected temperature unit is saved in localStorage and restored after page reload.
+
+9. The last searched city is saved in localStorage and automatically restored on the next visit.
+
+10. Weather-based CSS animations are enabled according to the current WMO weather code.
+
+11. Clicking a day in the 7-day forecast opens a detailed weather modal.
 
 ## APIs Used
 
