@@ -588,14 +588,6 @@ function formatTime(dateString) {
   });
 }
 
-// function formatHour(dateString) {
-//   const date = new Date(dateString);
-
-//   return date.toLocaleTimeString([], {
-//     hour: "numeric",
-//   });
-// }
-
 function formatHour(dateString) {
 
   const date =
