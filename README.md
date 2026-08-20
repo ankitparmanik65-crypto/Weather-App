@@ -17,7 +17,7 @@ A clean, responsive weather forecast web app built with vanilla HTML, CSS, and J
 - 🌧️ Weather-based animations — Background animations change according to weather conditions, including animated rain drops and moving clouds.
 - 🌌 Dark navy interface — Clean dark navy gradient background with glassmorphism-style weather cards.
 - 📱 Fully responsive — Optimized layouts for desktop, tablet, and mobile devices.
-- 🕒 Consistent 12-hour time format — Time is displayed using AM/PM consistently across supported devices.
+- 🕒 Consistent 24-hour time format — Time is displayed 24 hour format consistently across supported devices.
 - ⚡ No API key required — Uses the free Open-Meteo API for weather and geocoding data.
 
 ## Tech Stack
