@@ -588,12 +588,27 @@ function formatTime(dateString) {
   });
 }
 
-function formatHour(dateString) {
-  const date = new Date(dateString);
+// function formatHour(dateString) {
+//   const date = new Date(dateString);
 
-  return date.toLocaleTimeString([], {
-    hour: "numeric",
-  });
+//   return date.toLocaleTimeString([], {
+//     hour: "numeric",
+//   });
+// }
+
+function formatHour(dateString) {
+
+  const date =
+    new Date(dateString);
+
+  return date.toLocaleTimeString(
+    "en-GB",
+    {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false
+    }
+  );
 }
 
 function formatDate(dateString) {
